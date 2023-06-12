@@ -1,6 +1,46 @@
 # codebar-java-data-structures
 
+## Class diagram
+
+```mermaid
+classDiagram
+    class Node["Node&lt;T&gt;"] {
+        T value
+        Node previous
+        Node next
+        +String toString()
+    }
+
+    Node --> "0..1" Node : previous
+    Node --> "0..1" Node : next
+
+    class List["List&lt;T&gt;"] {
+        -Node head
+        -Node tail
+        +int size()
+        +void add(T elt)
+        +void push(T elt)
+        +T pop()
+        +Iterator iter()
+    }
+
+    List --> "0..1" Node : head
+    List --> "0..1" Node : tail
+
+    class Iterator["Iterator&lt;T&gt;"] {
+        -Node current
+        +boolean hasNext()
+        +T next()
+    }
+
+    Iterator ..> Node
+```
+
 ## Empty list
+
+* head == tail
+* head == null
+* tail == null
 
 ```mermaid
 flowchart LR
@@ -10,11 +50,11 @@ flowchart LR
     L[LIST]:::LIST
 ```
 
-* head == tail
-* head == null
-* tail == null
-
 ## List with 1 element
+
+* head == tail
+* head != null
+* tail != null
 
 ```mermaid
 flowchart LR
@@ -27,11 +67,11 @@ flowchart LR
     L -.->|tail| N1
 ```
 
-* head == tail
+## List with multiple elements
+
+* head != tail
 * head != null
 * tail != null
-
-## List with 2 elements
 
 ```mermaid
 flowchart LR
@@ -46,12 +86,6 @@ flowchart LR
     N1 -->|next| N2
     N2 -->|prev| N1
 ```
-
-* head != tail
-* head != null
-* tail != null
-
-## List with 3 elements
 
 ```mermaid
 flowchart LR
@@ -69,12 +103,6 @@ flowchart LR
     N2 -->|next| N3
     N3 -->|prev| N2
 ```
-
-* head != tail
-* head != null
-* tail != null
-
-## List with 4 elements
 
 ```mermaid
 flowchart LR
@@ -95,7 +123,3 @@ flowchart LR
     N3 -->|next| N4
     N4 -->|prev| N3
 ```
-
-* head != tail
-* head != null
-* tail != null

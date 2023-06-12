@@ -38,8 +38,9 @@ classDiagram
 
 ## Empty list
 
-* The head and the tail are identical (`head == tail`)
-* There is no head and no tail (`head == null && tail == null`)
+* The head and the tail are identical (`head == tail`).
+* There is no head and no tail (`head == null && tail == null`).
+* There are no nodes.
 
 ```mermaid
 flowchart LR
@@ -49,11 +50,11 @@ flowchart LR
     L[LIST]:::LIST
 ```
 
-## List with single element
+## List with a single element
 
-* The head and the tail are identical (`head == tail`)
-* There is a head and a tail (`head != null && tail != null`)
-* The single node has no predecessor and no successor (`previous == null && next == null`)
+* The head and the tail are identical (`head == tail`).
+* There is a head and a tail (`head != null && tail != null`).
+* The single node has no predecessor and no successor (`previous == null && next == null`).
 
 ```mermaid
 flowchart LR
@@ -68,11 +69,11 @@ flowchart LR
 
 ## List with multiple elements
 
-* The head and the tail are different (`head != tail`)
-* There is a head and a tail (`head != null && tail != null`)
-* The first node (head) has no predecessor and a successor (`previous == null && next != null`)
-* The middle nodes have a predecessor and a successor (`previous != null && next != null`)
-* The last node (tail) has a predecesssor and no successor (`previous != null && next == null`)
+* The head and the tail are different (`head != tail`).
+* There is a head and a tail (`head != null && tail != null`).
+* The first node (head) has no predecessor and a successor (`previous == null && next != null`).
+* The middle nodes, if any, have a predecessor and a successor (`previous != null && next != null`).
+* The last node (tail) has a predecesssor and no successor (`previous != null && next == null`).
 
 ```mermaid
 flowchart LR

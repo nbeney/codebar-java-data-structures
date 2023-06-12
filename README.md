@@ -6,8 +6,8 @@
 classDiagram
     class Node["Node&lt;T&gt;"] {
         T value
-        Node previous
-        Node next
+        Node&lt;T&gt; previous
+        Node&lt;T&gt; next
         +String toString()
     }
 
@@ -15,13 +15,13 @@ classDiagram
     Node --> "0..1" Node : next
 
     class List["List&lt;T&gt;"] {
-        -Node head
-        -Node tail
+        -Node&lt;T&gt; head
+        -Node&lt;T&gt; tail
         +int size()
         +void add(T elt)
         +void push(T elt)
         +T pop()
-        +Iterator iter()
+        +Iterator&lt;T&gt; iter()
     }
 
     List --> "0..1" Node : head
@@ -30,7 +30,7 @@ classDiagram
     class Iterator["Iterator&lt;T&gt;"]
 
     class ListIterator["ListIterator&lt;T&gt;"] {
-        -Node current
+        -Node&lt;T&gt; current
         +boolean hasNext()
         +T next()
     }

@@ -27,12 +27,15 @@ classDiagram
     List --> "0..1" Node : head
     List --> "0..1" Node : tail
 
+    class Iterator["Iterator&lt;T&gt;"]
+
     class ListIterator["ListIterator&lt;T&gt;"] {
         -Node current
         +boolean hasNext()
         +T next()
     }
 
+    Iterator <|.. ListIterator
     ListIterator ..> Node : current
 ```
 
